@@ -2,11 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "TanMonCheri";
+	src: url("/fonts/tan-mon-cheri.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "TTCommonsPro";
+	src: url("/fonts/tt-commons-pro-bold.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "TTCommonsPro";
+	src: url("/fonts/tt-commons-pro-medium.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "TTCommonsPro";
+	src: url("/fonts/tt-commons-pro-normal.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "TTCommonsPro";
+	src: url("/fonts/tt-commons-pro-light.ttf") format("truetype");
+	font-weight: 300;
+}
+
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+	@apply bg-white dark:bg-gray-950;
+	font-family: "TTCommonsPro", "TanMonCheri";
+	@media (prefers-color-scheme: dark) {
+		color-scheme: dark;
+	}
 }
