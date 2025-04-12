@@ -15,10 +15,10 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({
 	const parts = text.split(regex);
 
 	return (
-		<span className="text-base">
+		<span className="text-base font-ttcommons">
 			{parts.map((part, index) =>
 				highlightWords.includes(part) ? (
-					<span key={index} className="text-brown">
+					<span key={index} className="text-brown font-ttcommons">
 						{part}
 					</span>
 				) : (

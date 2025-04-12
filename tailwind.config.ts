@@ -16,6 +16,8 @@ export default {
 					"Segoe UI Symbol",
 					"Noto Color Emoji",
 				],
+				ttcommons: ["TTCommons"],
+				tanmoncher: ["TanMonCheri"],
 			},
 			colors: {
 				main: "#F4F1E9",

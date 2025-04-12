@@ -3,34 +3,42 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: "TheSeasons";
-	src: url("/fonts/theseasons-bd.otf");
+	font-family: "TanMonCheri";
+	src: url("/fonts/tan-mon-cheri.ttf") format("truetype");
 	font-weight: 700;
 }
 @font-face {
-	font-family: "TheSeasons";
-	src: url("/fonts/theseasons-reg.otf");
+	font-family: "TTCommons";
+	src: url("/fonts/tt-commons-pro-bold.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "TTCommons";
+	src: url("/fonts/tt-commons-pro-medium.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "TTCommons";
+	src: url("/fonts/tt-commons-pro-normal.ttf") format("truetype");
 	font-weight: 400;
 }
 @font-face {
-	font-family: "TheSeasons";
-	src: url("/fonts/theseasons-lt.otf");
+	font-family: "TTCommons";
+	src: url("/fonts/tt-commons-pro-light.ttf") format("truetype");
 	font-weight: 300;
 }
 
 html,
 body {
 	@apply bg-white dark:bg-gray-950;
-	font-family: "TheSeasons";
+	font-family: "TanMonCheri", "TTCommons";
 	@media (prefers-color-scheme: dark) {
 		color-scheme: dark;
 	}
 }
 
-
-
 @layer base {
-  :root {
+	:root {
 		--background: 0 0% 100%;
 		--foreground: 240 10% 3.9%;
 		--card: 0 0% 100%;
@@ -57,7 +65,7 @@ body {
 		--chart-5: 27 87% 67%;
 		--radius: 0.5rem;
 	}
-  .dark {
+	.dark {
 		--background: 240 10% 3.9%;
 		--foreground: 0 0% 98%;
 		--card: 240 10% 3.9%;
@@ -85,13 +93,11 @@ body {
 	}
 }
 
-
-
 @layer base {
-  * {
-    @apply border-border;
+	* {
+		@apply border-border;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }

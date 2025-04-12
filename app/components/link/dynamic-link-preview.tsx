@@ -110,7 +110,11 @@ export default function LinkPreview({
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 		>
-			<a href={href} className="text-forest">
+			<a
+				href={href}
+				target="_blank"
+				className="text-forest underline font-medium"
+			>
 				{children}
 			</a>
 

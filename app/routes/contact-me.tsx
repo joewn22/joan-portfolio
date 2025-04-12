@@ -1,9 +1,10 @@
 import MainLayout from "~/components/layout/main-layout";
+import ContactMe from "~/pages/Contact";
 
 const Page = () => {
 	return (
-		<MainLayout>
-			<p>contact me</p>
+		<MainLayout heading="Let’s work together ">
+			<ContactMe />
 		</MainLayout>
 	);
 };

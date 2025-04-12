@@ -1,5 +1,5 @@
 import MainLayout from "~/components/layout/main-layout";
-import Experience from "~/pages/Experience";
+import Experience from "~/pages/Projects";
 
 const Page = () => {
 	return (

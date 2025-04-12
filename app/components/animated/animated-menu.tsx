@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu } from "~/lib/type";
 import useNavStore from "~/store/nav-store";
-import { redirect, useLocation, useNavigate } from "@remix-run/react";
+import { useLocation, useNavigate } from "@remix-run/react";
 
 const AnimatedMenu = () => {
 	const { activeMenu, setActiveMenu } = useNavStore();
@@ -17,7 +17,7 @@ const AnimatedMenu = () => {
 		{ name: "Home", type: "hom", href: "/" },
 		{ name: "About me", type: "me", href: "/about-me" },
 		{ name: "Education", type: "edu", href: "/education" },
-		{ name: "Experience", type: "exp", href: "/experience" },
+		{ name: "Projects", type: "proj", href: "/projects" },
 		{ name: "Contact me", type: "cont", href: "/contact-me" },
 	];
 
@@ -55,7 +55,7 @@ const AnimatedMenu = () => {
 					<AnimatePresence>
 						{(activeMenu?.type === val.type || hoveredItem === val.type) && (
 							<motion.p
-								className="text-forest text-sm"
+								className="text-forest text-sm font-ttcommons font-light"
 								initial={{ opacity: 0, x: -10 }}
 								animate={{ opacity: 1, x: 0 }}
 								exit={{ opacity: 0, x: -10 }}

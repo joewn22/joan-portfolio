@@ -1,23 +1,27 @@
-import { useState, useEffect, ReactNode } from "react";
+import { ReactNode } from "react";
 
 const BookLine = ({
 	variant,
 	heading,
-	hasSub,
 	isSub,
+	hasSub,
 }: {
 	variant: "vertical" | "horizontal";
 	heading?: ReactNode;
-	hasSub?: boolean;
 	isSub?: boolean;
+	hasSub?: boolean;
 }) => {
 	return variant === "horizontal" ? (
 		<div
-			className={`flex flex-col space-y-${isSub ? "0" : "2"} mb-${
-				hasSub ? "0" : "4"
-			}`}
+			className={`flex flex-col ${isSub ? "space-y-1 mt-0" : "space-y-4 mb-4"}`}
 		>
-			<div className="pl-52">{heading}</div>
+			<span
+				className={`${
+					isSub && hasSub ? "pl-48 -mt-3 text-green-800" : "pl-48"
+				}`}
+			>
+				{heading}
+			</span>
 			<div className={`bg-lines h-px w-screen`} />
 		</div>
 	) : (

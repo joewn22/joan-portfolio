@@ -1,6 +1,6 @@
 export interface Menu {
 	name: string;
-	type: "hom" | "exp" | "me" | "cont" | "edu";
+	type: "hom" | "proj" | "me" | "cont" | "edu";
 	href: string;
 }
 

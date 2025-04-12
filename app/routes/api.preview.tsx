@@ -11,7 +11,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 	try {
 		const previewData = await getLinkPreview(targetUrl);
-		console.log("previewData: ", previewData);
 		return json(previewData);
 	} catch (error) {
 		console.error("Error fetching link preview:", error);

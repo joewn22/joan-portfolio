@@ -13,7 +13,7 @@ const MainLayout = ({
 	heading?: string;
 	subHeading?: string;
 }) => {
-	const topMargin = "sm:pt-20 pt-10";
+	const topMargin = "sm:pt-20 pt-4";
 	const rightMargin = "sm:pr-16 pr-2";
 
 	return (
@@ -25,7 +25,7 @@ const MainLayout = ({
 				<BookLine
 					variant="horizontal"
 					heading={<H1 label={heading ?? ""} />}
-					hasSub
+					hasSub={!subHeading}
 				/>
 				<BookLine
 					variant="horizontal"

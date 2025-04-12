@@ -6,13 +6,15 @@ const AboutMe = () => {
 		<div className="flex flex-col justify-center items-center h-screen space-y-5">
 			<div className="flex flex-row justify-between w-2/3 space-x-20 items-center">
 				<div>
-					<Circle width={80} height={80} color="pink">
+					<div
+						className={`flex w-80 h-80 rounded-full bg-pink items-center justify-center`}
+					>
 						<img src="/assets/me.png" className="h-72 w-72" />
-					</Circle>
+					</div>
 				</div>
 				<div className="flex flex-col space-y-5">
 					<SimpleAnimatedText />
-					<p className="text-black font-light text-lg w-[75%]">
+					<p className="text-black font-light text-lg w-[75%] font-ttcommons">
 						I specialize in crafting mobile and web applications from idea to
 						deployment. With a background in full-stack development and a deep
 						love for UX, I build interfaces that not only work flawlessly but
