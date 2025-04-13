@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
+import { cn } from "~/lib/utils";
 
-const SimpleAnimatedText = () => {
+const SimpleAnimatedText = ({
+	text,
+	className,
+}: {
+	text: string;
+	className?: string;
+}) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {
@@ -13,17 +20,20 @@ const SimpleAnimatedText = () => {
 
 	return (
 		<p
-			className={`
-        text-black text-3xl w-3/5
+			className={cn(
+				`
+        text-black sm:w-3/5 sm:text-start text-center
         transition-all duration-1000 ease-out
         ${
 					isVisible
 						? "opacity-100 transform translate-y-0"
 						: "opacity-0 transform translate-y-4"
 				}
-      `}
+      `,
+				className
+			)}
 		>
-			I have over 3 years of experience in the Software industry.
+			{text}
 		</p>
 	);
 };

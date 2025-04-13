@@ -4,10 +4,14 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	useLocation,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import { useEffect } from "react";
+import useNavStore from "./store/nav-store";
+import { menu } from "./lib/data";
 
 export const links: LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -41,5 +45,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+	const path = useLocation();
+	const { setActiveMenu } = useNavStore();
+
+	useEffect(() => {
+		if (path.pathname) {
+			setActiveMenu(menu.find((men) => men.href === path.pathname) ?? menu[0]);
+		}
+	}, [path.pathname]);
+
 	return <Outlet />;
 }

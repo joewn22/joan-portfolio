@@ -1,31 +1,16 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu } from "~/lib/type";
 import useNavStore from "~/store/nav-store";
 import { useLocation, useNavigate } from "@remix-run/react";
+import { menu } from "~/lib/data";
 
 const AnimatedMenu = () => {
-	const { activeMenu, setActiveMenu } = useNavStore();
+	const { activeMenu } = useNavStore();
 	const [hoveredItem, setHoveredItem] = useState("");
 
 	const navigate = useNavigate();
-	const path = useLocation();
 
 	const leftMargin = "pl-12";
-
-	const menu: Menu[] = [
-		{ name: "Home", type: "hom", href: "/" },
-		{ name: "About me", type: "me", href: "/about-me" },
-		{ name: "Education", type: "edu", href: "/education" },
-		{ name: "Projects", type: "proj", href: "/projects" },
-		{ name: "Contact me", type: "cont", href: "/contact-me" },
-	];
-
-	useEffect(() => {
-		if (path.pathname) {
-			setActiveMenu(menu.find((men) => men.href === path.pathname) ?? menu[0]);
-		}
-	}, [path.pathname]);
 
 	return (
 		<div

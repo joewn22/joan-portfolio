@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 const ChildContainer = ({ children }: { children: ReactNode }) => {
 	return (
-		<div className="flex flex-col justify-center items-center h-screen space-y-5">
+		<div className="flex flex-col sm:justify-center items-center h-screen space-y-5">
 			{children}
 		</div>
 	);

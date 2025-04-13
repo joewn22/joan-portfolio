@@ -1,98 +1,116 @@
+import { motion } from "framer-motion";
 import SlideToOneCarousel from "~/components/carousel/horizontal";
 import DynamicText from "~/components/text/Dynamic";
 import HighlightedText from "~/components/text/Highlighted";
+import {
+	containerVariants,
+	highlightCardVariants,
+	slideVariants,
+	tagVariants,
+} from "~/lib/animated-variants";
 import { experiences } from "~/lib/data";
+import { cn, getHighlightedWords } from "~/lib/utils";
 
 const Projects = () => {
-	function getHighlightedWords(keyHighlightId: number) {
-		switch (keyHighlightId) {
-			case 1:
-				return ["AURA API", "Google Location Services"];
-			case 2:
-				return ["personalized", "cycle", "tracker", "custom", "APIs"];
-			case 3:
-				return ["real-time", "emoji", "reactions"];
-			case 4:
-				return ["drove", "user", "retention"];
-			case 5:
-				return ["cargo", "bookings", "pin", "drops", "autofill"];
-			case 6:
-				return ["real-time", "chat", "boosting", "delivery", "speed"];
-			case 7:
-				return ["Designed", "refined", "user", "flows"];
-			case 8:
-				return [
-					"multilingual",
-					"system",
-					"improving",
-					"accessibility",
-					"across",
-					"global",
-					"markets",
-				];
-			case 9:
-				return [
-					"Collaborated",
-					"with",
-					"stakeholders",
-					"align",
-					"product",
-					"decisions",
-				];
-			case 10:
-				return ["agile", "sprints", "reviews", "delivery", "milestones"];
-			case 11:
-				return ["Managed", "the", "product", "lifecycle"];
-			case 12:
-				return ["features", "products", "engineers"];
-			default:
-				return [""];
-		}
-	}
-
 	return (
-		<div className="flex flex-col justify-center items-center h-screen space-y-5">
+		<motion.div
+			className="flex flex-col justify-center sm:items-center h-screen"
+			variants={containerVariants}
+			initial="hidden"
+			animate="visible"
+		>
 			<SlideToOneCarousel
-				parentStyle="flex flex-col w-9/12 top-[6rem]"
+				parentStyle="flex flex-col sm:w-9/12 w-[95%] sm:top-[6rem]"
 				slideContent={
 					<>
 						{experiences.map((exp, index) => (
-							<div
-								className="flex-[0_0_100%] min-w-0 embla__slide flex-col space-y-8"
+							<motion.div
+								className="flex-[0_0_100%] min-w-0 embla__slide flex-col space-y-8 bottom-0"
 								key={index}
+								variants={slideVariants}
+								initial="initial"
+								animate="enter"
+								exit="exit"
 							>
 								<div className="flex flex-col space-y-4">
-									<p className="text-2xl font-ttcommons">{exp.heading}</p>
+									<motion.p
+										className="sm:text-2xl text-lg font-ttcommons"
+										initial={{ opacity: 0, y: 10 }}
+										animate={{
+											opacity: 1,
+											y: 0,
+											transition: { duration: 0.5, delay: 0.1 },
+										}}
+									>
+										{exp.heading}
+									</motion.p>
 									<div className="flex flex-row space-x-2">
-										{exp.techStack.map((stack, index) => (
-											<div
-												className="flex w-auto h-auto p-2 border border-brown rounded-sm font-light text-md font-ttcommons"
-												key={index}
+										{exp.techStack.map((stack, stackIndex) => (
+											<motion.div
+												className="flex w-auto h-auto p-2 border border-brown rounded-sm font-light sm:text-md text-xs font-ttcommons cursor-pointer"
+												key={stackIndex}
+												variants={tagVariants}
+												custom={stackIndex}
+												initial="hidden"
+												animate="visible"
+												whileHover="hover"
 											>
 												{stack}
-											</div>
+											</motion.div>
 										))}
 									</div>
 								</div>
-								<DynamicText className="w-[80%]" text={exp.description} />
 
-								<p className="text-xl font-medium font-ttcommons">
+								<motion.div
+									initial={{ opacity: 0, y: 10 }}
+									animate={{
+										opacity: 1,
+										y: 0,
+										transition: { duration: 0.5, delay: 0.3 },
+									}}
+								>
+									<DynamicText className="sm:w-[80%]" text={exp.description} />
+								</motion.div>
+
+								<motion.p
+									className="sm:text-xl text-lg font-medium font-ttcommons"
+									initial={{ opacity: 0 }}
+									animate={{
+										opacity: 1,
+										transition: { duration: 0.5, delay: 0.4 },
+									}}
+								>
 									Key Highlights
-								</p>
-								<div className="grid grid-cols-4 gap-16">
-									{exp.keyHighlights.map((kh, index) => (
-										<div
-											className="w-56 h-56 p-px rounded-sm border border-[#B4735F]"
-											key={index}
+								</motion.p>
+
+								<div className="grid sm:grid-cols-4 grid-cols-2 sm:gap-16 gap-4">
+									{exp.keyHighlights.map((kh, khIndex) => (
+										<motion.div
+											className="sm:w-56 sm:h-56 w-48 h-48 p-px rounded-sm border border-[#B4735F]"
+											key={khIndex}
+											variants={highlightCardVariants}
+											custom={khIndex}
+											initial="hidden"
+											animate="visible"
+											whileHover="hover"
 										>
 											<div className="flex flex-col h-full rounded-md p-4 space-y-4">
 												<div className="flex flex-row items-center space-x-2">
-													<img
+													<motion.img
 														src={kh.icons}
 														alt={kh.icons}
-														className="w-7 h-7"
+														className={cn(kh.id === 3 ? "w-10 h-8" : "w-7 h-7")}
+														initial={{ opacity: 0, rotateY: 90 }}
+														animate={{
+															opacity: 1,
+															rotateY: 0,
+															transition: {
+																duration: 0.5,
+																delay: 0.1 * khIndex + 0.5,
+															},
+														}}
 													/>
-													<p className="text-base font-medium font-ttcommons">
+													<p className="sm:text-base text-sm font-medium font-ttcommons">
 														{kh.title}
 													</p>
 												</div>
@@ -102,15 +120,15 @@ const Projects = () => {
 													highlightClassName="text-brown"
 												/>
 											</div>
-										</div>
+										</motion.div>
 									))}
 								</div>
-							</div>
+							</motion.div>
 						))}
 					</>
 				}
 			/>
-		</div>
+		</motion.div>
 	);
 };
 

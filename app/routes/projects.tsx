@@ -1,5 +1,5 @@
 import MainLayout from "~/components/layout/main-layout";
-import Experience from "~/pages/Projects";
+import Projects from "~/pages/Projects";
 
 const Page = () => {
 	return (
@@ -7,7 +7,7 @@ const Page = () => {
 			heading="2022 – 2025 | Bridge Labs (Startup)"
 			subHeading="Lead Software Engineer "
 		>
-			<Experience />
+			<Projects />
 		</MainLayout>
 	);
 };

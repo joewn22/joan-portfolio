@@ -4,24 +4,16 @@ const BookLine = ({
 	variant,
 	heading,
 	isSub,
-	hasSub,
 }: {
 	variant: "vertical" | "horizontal";
 	heading?: ReactNode;
 	isSub?: boolean;
-	hasSub?: boolean;
 }) => {
+	const style = isSub && heading ? `space-y-1 -mt-3 mb-3` : `space-y-4 mb-4`;
+
 	return variant === "horizontal" ? (
-		<div
-			className={`flex flex-col ${isSub ? "space-y-1 mt-0" : "space-y-4 mb-4"}`}
-		>
-			<span
-				className={`${
-					isSub && hasSub ? "pl-48 -mt-3 text-green-800" : "pl-48"
-				}`}
-			>
-				{heading}
-			</span>
+		<div className={`flex flex-col ${style}`}>
+			<span className="sm:pl-[13rem] pl-3">{heading}</span>
 			<div className={`bg-lines h-px w-screen`} />
 		</div>
 	) : (

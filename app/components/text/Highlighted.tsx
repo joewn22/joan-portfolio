@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 type HighlightedTextProps = {
 	text: string;
@@ -15,7 +15,7 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({
 	const parts = text.split(regex);
 
 	return (
-		<span className="text-base font-ttcommons">
+		<span className="sm:text-base text-xs font-ttcommons">
 			{parts.map((part, index) =>
 				highlightWords.includes(part) ? (
 					<span key={index} className="text-brown font-ttcommons">

@@ -1,4 +1,12 @@
-import { WorkExperience } from "./type";
+import { Menu, WorkExperience } from "./type";
+
+export const menu: Menu[] = [
+	{ name: "Home", type: "hom", href: "/" },
+	{ name: "About me", type: "me", href: "/about-me" },
+	{ name: "Education", type: "edu", href: "/education" },
+	{ name: "Projects", type: "proj", href: "/projects" },
+	{ name: "Contact me", type: "cont", href: "/contact-me" },
+];
 
 export const experiences: WorkExperience[] = [
 	{

@@ -25,9 +25,9 @@ const PDFViewerSheet = ({
 }) => {
 	return (
 		<Sheet open={open} onOpenChange={setOpen}>
-			<SheetContent className="max-h-[100vh] overflow-y-auto w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl space-y-5">
+			<SheetContent className="max-h-[100vh] overflow-y-auto w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl space-y-5 bg-main">
 				<SheetHeader className="sticky">
-					<SheetTitle>{sheetTitle}</SheetTitle>
+					<SheetTitle className="font-normal">{sheetTitle}</SheetTitle>
 					<SheetDescription>{sheetSubTitle}</SheetDescription>
 				</SheetHeader>
 				<Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
