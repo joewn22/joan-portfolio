@@ -4,6 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import { netlifyPlugin } from "@netlify/remix-adapter/plugin";
 
 const require = createRequire(import.meta.url);
 const standardFontsDir = normalizePath(
@@ -39,5 +40,6 @@ export default defineConfig({
 				},
 			],
 		}),
+		netlifyPlugin(),
 	],
 });
