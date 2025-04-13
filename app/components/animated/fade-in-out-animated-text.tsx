@@ -22,7 +22,7 @@ const SimpleAnimatedText = ({
 		<p
 			className={cn(
 				`
-        text-black sm:w-3/5 sm:text-start text-center
+        text-black sm:w-3/5
         transition-all duration-1000 ease-out
         ${
 					isVisible

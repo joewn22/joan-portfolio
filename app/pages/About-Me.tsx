@@ -28,14 +28,14 @@ const AboutMe = () => {
 					<div className="flex flex-col space-y-5 sm:px-0 px-10 ">
 						<SimpleAnimatedText
 							text="I have over 3 years experience in the Software industry."
-							className="sm:text-3xl text-base"
+							className="sm:text-3xl text-base text-center sm:text-start"
 						/>
 						<SimpleAnimatedText
 							text="I specialize in crafting mobile and web applications from idea to
 						deployment. With a background in full-stack development and a deep
 						love for UX, I build interfaces that not only work flawlessly but
 						feel right."
-							className="text-black font-light sm:text-lg text-xs sm:w-[75%] font-ttcommons"
+							className="text-black font-light sm:text-lg text-xs sm:w-[75%] font-ttcommons text-center sm:text-start"
 						/>
 					</div>
 				)}
