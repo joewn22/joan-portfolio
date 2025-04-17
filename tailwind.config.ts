@@ -5,6 +5,9 @@ export default {
 	content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
+			screens: {
+				"mobile-lg": { min: "390px", max: "918px" },
+			},
 			fontFamily: {
 				sans: [
 					"Inter",

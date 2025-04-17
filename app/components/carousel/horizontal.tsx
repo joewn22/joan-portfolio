@@ -21,7 +21,7 @@ const SlideToOneCarousel = ({
 	const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS);
 
 	return (
-		<div className={cn("relative mx-auto", parentStyle)}>
+		<div className={cn("relative p-2", parentStyle)}>
 			<div className="overflow-hidden" ref={emblaRef}>
 				<div className="flex">{slideContent}</div>
 			</div>

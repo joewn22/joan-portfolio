@@ -25,7 +25,7 @@ const Projects = () => {
 					<>
 						{experiences.map((exp, index) => (
 							<motion.div
-								className="flex-[0_0_100%] min-w-0 embla__slide flex-col space-y-8 bottom-0"
+								className="flex-[0_0_100%] min-w-0 embla__slide flex-col space-y-8 bottom-0 "
 								key={index}
 								variants={slideVariants}
 								initial="initial"
@@ -44,7 +44,7 @@ const Projects = () => {
 									>
 										{exp.heading}
 									</motion.p>
-									<div className="flex flex-row space-x-2">
+									<div className="sm:flex sm:flex-row grid grid-cols-4 sm:space-x-2 gap-2">
 										{exp.techStack.map((stack, stackIndex) => (
 											<motion.div
 												className="flex w-auto h-auto p-2 border border-brown rounded-sm font-light sm:text-md text-xs font-ttcommons cursor-pointer"
@@ -86,7 +86,7 @@ const Projects = () => {
 								<div className="grid sm:grid-cols-4 grid-cols-2 sm:gap-16 gap-4">
 									{exp.keyHighlights.map((kh, khIndex) => (
 										<motion.div
-											className="sm:w-56 sm:h-56 w-48 h-48 p-px rounded-sm border border-[#B4735F]"
+											className="sm:w-56 sm:h-56 w-[10rem] h-[10rem] p-px rounded-sm border border-[#B4735F]"
 											key={khIndex}
 											variants={highlightCardVariants}
 											custom={khIndex}
@@ -94,7 +94,7 @@ const Projects = () => {
 											animate="visible"
 											whileHover="hover"
 										>
-											<div className="flex flex-col h-full rounded-md p-4 space-y-4">
+											<div className="flex flex-col h-full rounded-md sm:p-4 p-2 space-y-4">
 												<div className="flex flex-row items-center space-x-2">
 													<motion.img
 														src={kh.icons}
@@ -110,7 +110,7 @@ const Projects = () => {
 															},
 														}}
 													/>
-													<p className="sm:text-base text-sm font-medium font-ttcommons">
+													<p className="sm:text-base text-xs font-medium font-ttcommons">
 														{kh.title}
 													</p>
 												</div>

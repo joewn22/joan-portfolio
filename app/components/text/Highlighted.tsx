@@ -15,7 +15,7 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({
 	const parts = text.split(regex);
 
 	return (
-		<span className="sm:text-base text-xs font-ttcommons">
+		<span className="sm:text-base text-[10px] font-ttcommons">
 			{parts.map((part, index) =>
 				highlightWords.includes(part) ? (
 					<span key={index} className="text-brown font-ttcommons">
