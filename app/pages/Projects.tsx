@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { ArrowDown01Icon, ArrowUp01Icon } from "hugeicons-react";
+import { useState } from "react";
 import SlideToOneCarousel from "~/components/carousel/horizontal";
 import DynamicText from "~/components/text/Dynamic";
 import HighlightedText from "~/components/text/Highlighted";
@@ -9,12 +11,16 @@ import {
 	tagVariants,
 } from "~/lib/animated-variants";
 import { experiences } from "~/lib/data";
+import { KeyHighlights } from "~/lib/type";
 import { cn, getHighlightedWords } from "~/lib/utils";
 
 const Projects = () => {
+	const [activeHighlight, setActiveHighlight] = useState<
+		KeyHighlights | undefined
+	>();
 	return (
 		<motion.div
-			className="flex flex-col justify-center sm:items-center h-screen"
+			className="flex flex-col sm:justify-center sm:items-center h-screen"
 			variants={containerVariants}
 			initial="hidden"
 			animate="visible"
@@ -25,7 +31,7 @@ const Projects = () => {
 					<>
 						{experiences.map((exp, index) => (
 							<motion.div
-								className="flex-[0_0_100%] min-w-0 embla__slide flex-col space-y-8 bottom-0 "
+								className="flex-[0_0_100%] min-w-0 embla__slide flex-col space-y-8 bottom-0 px-2"
 								key={index}
 								variants={slideVariants}
 								initial="initial"
@@ -44,7 +50,7 @@ const Projects = () => {
 									>
 										{exp.heading}
 									</motion.p>
-									<div className="sm:flex sm:flex-row grid grid-cols-4 sm:space-x-2 gap-2">
+									<div className="sm:flex sm:flex-row sm:space-x-2 hidden">
 										{exp.techStack.map((stack, stackIndex) => (
 											<motion.div
 												className="flex w-auto h-auto p-2 border border-brown rounded-sm font-light sm:text-md text-xs font-ttcommons cursor-pointer"
@@ -83,10 +89,13 @@ const Projects = () => {
 									Key Highlights
 								</motion.p>
 
-								<div className="grid sm:grid-cols-4 grid-cols-2 sm:gap-16 gap-4">
+								<div className="sm:grid sm:grid-cols-4 flex flex-col gap-4 sm:gap-16">
 									{exp.keyHighlights.map((kh, khIndex) => (
 										<motion.div
-											className="sm:w-56 sm:h-56 w-[10rem] h-[10rem] p-px rounded-sm border border-[#B4735F]"
+											className={cn(
+												`sm:w-56 sm:h-56 w-full p-px rounded-sm border border-[#B4735F]`,
+												activeHighlight !== kh ? "h-12" : "h-[10rem]"
+											)}
 											key={khIndex}
 											variants={highlightCardVariants}
 											custom={khIndex}
@@ -95,30 +104,61 @@ const Projects = () => {
 											whileHover="hover"
 										>
 											<div className="flex flex-col h-full rounded-md sm:p-4 p-2 space-y-4">
-												<div className="flex flex-row items-center space-x-2">
-													<motion.img
-														src={kh.icons}
-														alt={kh.icons}
-														className={cn(kh.id === 3 ? "w-10 h-8" : "w-7 h-7")}
-														initial={{ opacity: 0, rotateY: 90 }}
-														animate={{
-															opacity: 1,
-															rotateY: 0,
-															transition: {
-																duration: 0.5,
-																delay: 0.1 * khIndex + 0.5,
-															},
-														}}
-													/>
-													<p className="sm:text-base text-xs font-medium font-ttcommons">
-														{kh.title}
-													</p>
+												<div className="flex flex-row items-center w-full justify-between">
+													<div className="flex flex-row items-center space-x-2">
+														<motion.img
+															src={kh.icons}
+															alt={kh.icons}
+															className={cn(
+																kh.id === 3 ? "w-10 h-8" : "w-7 h-7"
+															)}
+															initial={{ opacity: 0, rotateY: 90 }}
+															animate={{
+																opacity: 1,
+																rotateY: 0,
+																transition: {
+																	duration: 0.5,
+																	delay: 0.1 * khIndex + 0.5,
+																},
+															}}
+														/>
+														<p
+															className={cn(
+																"sm:text-base text-xs font-medium font-ttcommons"
+															)}
+														>
+															{kh.title}
+														</p>
+													</div>
+													{activeHighlight !== kh && (
+														<ArrowDown01Icon
+															className="sm:hidden block cursor-pointer"
+															onClick={() => setActiveHighlight(kh)}
+														/>
+													)}
+													{activeHighlight === kh && (
+														<ArrowUp01Icon
+															className="sm:hidden block cursor-pointer"
+															onClick={() => setActiveHighlight(undefined)}
+														/>
+													)}
 												</div>
-												<HighlightedText
-													text={kh.description}
-													highlightWords={getHighlightedWords(kh.id)}
-													highlightClassName="text-brown"
-												/>
+
+												{activeHighlight === undefined && (
+													<HighlightedText
+														text={kh.description}
+														highlightWords={getHighlightedWords(kh.id)}
+														highlightClassName="hidden sm:block"
+													/>
+												)}
+
+												{activeHighlight?.description === kh.description && (
+													<HighlightedText
+														text={kh.description}
+														highlightWords={getHighlightedWords(kh.id)}
+														highlightClassName="sm:hidden block"
+													/>
+												)}
 											</div>
 										</motion.div>
 									))}

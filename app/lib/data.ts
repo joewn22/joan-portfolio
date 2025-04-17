@@ -18,28 +18,28 @@ export const experiences: WorkExperience[] = [
 		keyHighlights: [
 			{
 				id: 1,
-				icons: "/assets/emergency-response.png",
+				icons: "https://i.postimg.cc/gJk7ZbSr/emergency-response.png",
 				title: "Emergency Response",
 				description:
 					"Integrated the AURA API with Google Location Services to allow users to request emergency help directly from their app.",
 			},
 			{
 				id: 2,
-				icons: "/assets/cycle-tracker.png",
+				icons: "https://i.postimg.cc/PqH9dw1W/cycle-tracker.png",
 				title: "Cycle Tracker",
 				description:
 					"Developed a personalized cycle tracker, integrating a C# .NET backend and custom APIs for dynamic, user-specific data.",
 			},
 			{
 				id: 3,
-				icons: "/assets/emoji-chat.png",
+				icons: "https://i.postimg.cc/hG0wvt0H/emoji-chat.png",
 				title: "Community Chat",
 				description:
 					"Engineered real-time emoji reactions to boost engagement in user conversations.",
 			},
 			{
 				id: 4,
-				icons: "/assets/gamification.png",
+				icons: "https://i.postimg.cc/tJ8vwZXV/gamification.png",
 				title: "Gamification Engine",
 				description:
 					"Built a badge and reward system that encouraged daily app usage and drove user retention.",
@@ -53,8 +53,6 @@ export const experiences: WorkExperience[] = [
 			"WebSocktes",
 			"Kotlin",
 			"SwiftUI",
-			".NET",
-			"C#",
 			"Figma",
 			"Firebase",
 			"Azure DevOps",
@@ -63,29 +61,29 @@ export const experiences: WorkExperience[] = [
 			'In 2023, I stepped into a mid-level role at Bridge Labs and took the lead on my first fully native mobile app —  <a href="https://apps.apple.com/za/app/appload/id6451194589">Appload</a>, a logistics platform that connects clients with service providers in real time. <br/> Initially a core contributor, I later became the Lead Engineer, driving sprint planning, code reviews, product design, and feature development.',
 		keyHighlights: [
 			{
-				id: 9,
-				icons: "/assets/order.png",
+				id: 5,
+				icons: "https://i.postimg.cc/jS0kh7gp/order.png",
 				title: "Order Management",
 				description:
 					"Built a scalable order flow for cargo bookings with pin drops, distance calculation, and autofill—powered by Google Maps SDK.",
 			},
 			{
-				id: 10,
-				icons: "/assets/real-time.png",
+				id: 6,
+				icons: "https://i.postimg.cc/R0Gs9bSm/real-time.png",
 				title: "Real-Time Messaging",
 				description:
 					"Enabled real-time chat between clients, transporters, and support boosting delivery speed and operational clarity.",
 			},
 			{
-				id: 11,
-				icons: "/assets/design.png",
+				id: 7,
+				icons: "https://i.postimg.cc/HkXFG28W/design.png",
 				title: "Product Design",
 				description:
 					"Designed and refined core user flows, ensuring the interface aligned with user needs and business goals.",
 			},
 			{
-				id: 12,
-				icons: "/assets/local.png",
+				id: 8,
+				icons: "https://i.postimg.cc/8Pr0WHHd/local.png",
 				title: "Localization Support",
 				description:
 					"Delivered a scalable multilingual system using resource framework, improving accessibility and user satisfaction across global markets.",
@@ -105,29 +103,29 @@ export const experiences: WorkExperience[] = [
 			'In 2024, I led product and frontend development on <a href="https://apps.apple.com/za/app/ahc-peak/id6692624993">PEAK</a>, an EdTech platform focused on learner success. I balanced user needs, product goals, and technical execution—shaping the experience from design to delivery. <br/> I also led the frontend of <a href="https://apps.apple.com/za/app/sava-mobile/id6670749596">SAVA</a>, a FinTech mobile app, handling API integration and building a clean, high-performing UI tailored for financial workflows. For both projects, I created the app store visuals for Google Play and the App Store—highlighting core features and enhancing discoverability.',
 		keyHighlights: [
 			{
-				id: 13,
-				icons: "/assets/strategy.png",
+				id: 9,
+				icons: "https://i.postimg.cc/qR516h6Z/strategy.png",
 				title: "Strategy & Design",
 				description:
 					"Collaborated with stakeholders to build user-first experiences and align product decisions with learning outcomes.",
 			},
 			{
-				id: 14,
-				icons: "/assets/lead.png",
+				id: 10,
+				icons: "https://i.postimg.cc/L4WWn7z6/lead.png",
 				title: "Team Leadership",
 				description:
 					"Directed a cross-functional engineering team through agile sprints, reviews, and delivery milestones.",
 			},
 			{
-				id: 15,
-				icons: "/assets/rocket.png",
+				id: 11,
+				icons: "https://i.postimg.cc/500PtqyC/rocket.png",
 				title: "Ownership",
 				description:
 					"Managed the product lifecycle—from early concept and wireframes to final deployment across Google Play and App Store.",
 			},
 			{
-				id: 16,
-				icons: "/assets/product.png",
+				id: 12,
+				icons: "https://i.postimg.cc/9QdggQsr/product.png",
 				title: "Product Vision",
 				description:
 					"Identified core user needs and mapped out features to guide the products and engineers.",

@@ -20,7 +20,7 @@ const FAB = () => {
 		<div className="flex w-full absolute bottom-0 justify-end overflow-hidden">
 			<img
 				alt="birds"
-				src="./assets/birds.png"
+				src="https://i.postimg.cc/yN7QMzzn/birds.png"
 				className={`
           w-96 h-96
           transition-all duration-1000 ease-out

@@ -20,7 +20,7 @@ const AboutMe = () => {
 						<motion.img
 							alt="joan"
 							className="sm:w-72 sm:h-72 w-40 h-40"
-							src="./assets/me.png"
+							src="https://i.postimg.cc/nM8TTyk4/me.png"
 						/>
 					</motion.div>
 				</div>
@@ -44,7 +44,7 @@ const AboutMe = () => {
 				<motion.img
 					alt="birds"
 					className="sm:w-96 sm:h-96 w-56 h-56"
-					src="./assets/birds.png"
+					src="https://i.postimg.cc/yN7QMzzn/birds.png"
 					variants={bottomRightImageVariant}
 					initial="hidden"
 					animate="visible"

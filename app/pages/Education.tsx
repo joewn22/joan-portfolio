@@ -142,7 +142,7 @@ const Education = () => {
 				<motion.img
 					alt="book"
 					className="sm:w-64 sm:h-64 w-40 h-40"
-					src="./assets/book.png"
+					src="https://i.postimg.cc/Px3RbV9y/book.png"
 					variants={bottomRightImageVariant}
 					initial="hidden"
 					animate="visible"

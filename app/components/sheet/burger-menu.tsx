@@ -51,23 +51,20 @@ const BurgerMenu = ({
 							/>
 
 							<AnimatePresence>
-								{(activeMenu?.type === val.type ||
-									hoveredItem === val.type) && (
-									<motion.p
-										className="text-forest text-sm font-ttcommons font-light"
-										initial={{ opacity: 0, x: -10 }}
-										animate={{ opacity: 1, x: 0 }}
-										exit={{ opacity: 0, x: -10 }}
-										transition={{
-											type: "spring",
-											stiffness: 400,
-											damping: 25,
-											opacity: { duration: 0.15 },
-										}}
-									>
-										{val.name}
-									</motion.p>
-								)}
+								<motion.p
+									className="text-forest text-sm font-ttcommons font-light"
+									initial={{ opacity: 0, x: -10 }}
+									animate={{ opacity: 1, x: 0 }}
+									exit={{ opacity: 0, x: -10 }}
+									transition={{
+										type: "spring",
+										stiffness: 400,
+										damping: 25,
+										opacity: { duration: 0.15 },
+									}}
+								>
+									{val.name}
+								</motion.p>
 							</AnimatePresence>
 						</motion.div>
 					))}

@@ -46,7 +46,7 @@ const ContactMe = () => {
 				<motion.img
 					alt="birds"
 					className="sm:w-96 sm:h-96 w-56 h-56"
-					src="./assets/birds.png"
+					src="https://i.postimg.cc/yN7QMzzn/birds.png"
 					variants={bottomRightImageVariant}
 					initial="hidden"
 					animate="visible"
