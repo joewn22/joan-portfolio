@@ -1,35 +1,105 @@
 import { motion } from "framer-motion";
-import { ArrowDown01Icon, ArrowUp01Icon } from "hugeicons-react";
-import { useState } from "react";
-import SlideToOneCarousel from "~/components/carousel/horizontal";
-import DynamicText from "~/components/text/Dynamic";
-import HighlightedText from "~/components/text/Highlighted";
 import {
-	containerVariants,
-	highlightCardVariants,
-	slideVariants,
-	tagVariants,
-} from "~/lib/animated-variants";
-import { experiences } from "~/lib/data";
-import { KeyHighlights } from "~/lib/type";
-import { cn, getHighlightedWords } from "~/lib/utils";
+	AndroidIcon,
+	Apple01Icon,
+	AppleIcon,
+	LaptopIcon,
+	WebDesign02Icon,
+} from "hugeicons-react";
+import LinkPreview from "~/components/link/dynamic-link-preview";
+import DynamicText from "~/components/text/Dynamic";
+import { containerVariants } from "~/lib/animated-variants";
+import { projects } from "~/lib/data";
 
 const Projects = () => {
-	const [activeHighlight, setActiveHighlight] = useState<
-		KeyHighlights | undefined
-	>();
 	return (
 		<motion.div
-			className="flex flex-col sm:justify-center sm:items-center h-screen"
+			className="flex flex-col justify-center items-center h-screen sm:pt-28"
 			variants={containerVariants}
 			initial="hidden"
 			animate="visible"
 		>
-			<SlideToOneCarousel
+			<div className="grid sm:grid-cols-3 grid-cols-2 gap-5 sm:w-9/12 w-[95%]">
+				{projects.map((proj, index) => (
+					<div
+						className="flex flex-col space-y-2 border border-gold rounded shadow-lg p-2 sm:w-96 w-full sm:h-[21rem] h-[17rem]"
+						key={index}
+					>
+						{proj.type === "web" ? (
+							<img
+								className="m-0 sm:h-[174px] h-20 w-full rounded-sm object-cover"
+								src={proj.imageUrl}
+							/>
+						) : (
+							<LinkPreview href={proj.urls.ios ?? ""} />
+						)}
+
+						<div className="flex flex-row items-center justify-between">
+							<motion.p
+								className="sm:text-lg text-sm font-ttcommons text-forest"
+								initial={{ opacity: 0, y: 10 }}
+								animate={{
+									opacity: 1,
+									y: 0,
+									transition: { duration: 0.5, delay: 0.1 },
+								}}
+							>
+								{proj.heading}
+							</motion.p>
+							<div className="flex flex-row items-center space-x-2">
+								{proj.type === "web" ? (
+									<a href={proj.urls.web} target="_blank">
+										<LaptopIcon size={20} />
+									</a>
+								) : (
+									<>
+										<a href={proj.urls.ios} target="_blank">
+											<AppleIcon size={20} fill="black" />
+										</a>
+										<a href={proj.urls.android} target="_blank">
+											<AndroidIcon size={20} fill="black" />
+										</a>
+									</>
+								)}
+							</div>
+						</div>
+
+						<motion.div
+							initial={{ opacity: 0, y: 10 }}
+							animate={{
+								opacity: 1,
+								y: 0,
+								transition: { duration: 0.5, delay: 0.3 },
+							}}
+						>
+							<p className="sm:text-sm text-[10px] font-ttcommons font-light">
+								{proj.description}
+							</p>
+						</motion.div>
+						{/* {exp.techStack.map((stack, stackIndex) => (
+							<motion.div
+								className="flex w-auto h-auto p-1 border border-brown rounded-sm font-light sm:text-md text-xs font-ttcommons cursor-pointer"
+								key={stackIndex}
+								variants={tagVariants}
+								custom={stackIndex}
+								initial="hidden"
+								animate="visible"
+								whileHover="hover"
+							>
+								{stack}
+							</motion.div>
+						))} */}
+					</div>
+				))}
+			</div>
+			{/* <SlideToOneCarousel
 				parentStyle="flex flex-col sm:w-9/12 w-[95%] sm:top-[6rem]"
 				slideContent={
 					<>
 						{experiences.map((exp, index) => (
+							<LinkPreview href={exp.href ?? ""} />
+						))}
+						{/* {experiences.map((exp, index) => (
 							<motion.div
 								className="flex-[0_0_100%] min-w-0 embla__slide flex-col space-y-8 bottom-0 px-2"
 								key={index}
@@ -38,7 +108,9 @@ const Projects = () => {
 								animate="enter"
 								exit="exit"
 							>
-								<div className="flex flex-col space-y-4">
+								{/* 
+								
+								{/* <div className="flex flex-col space-y-4">
 									<motion.p
 										className="sm:text-2xl text-lg font-ttcommons"
 										initial={{ opacity: 0, y: 10 }}
@@ -162,12 +234,12 @@ const Projects = () => {
 											</div>
 										</motion.div>
 									))}
-								</div>
-							</motion.div>
+								</div> 
+							</motion.div> 
 						))}
 					</>
 				}
-			/>
+			/> */}
 		</motion.div>
 	);
 };

@@ -30,6 +30,7 @@ export default {
 				black: "#030B1B",
 				pink: "#EFE8E1",
 				brown: "#C88542",
+				grey: "#DBD9D4",
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
 				card: {

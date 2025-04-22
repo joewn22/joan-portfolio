@@ -1,4 +1,4 @@
-import { Menu, WorkExperience } from "./type";
+import { Menu, Projects, WorkExperience } from "./type";
 
 export const menu: Menu[] = [
 	{ name: "Home", type: "hom", href: "/" },
@@ -8,47 +8,120 @@ export const menu: Menu[] = [
 	{ name: "Contact me", type: "cont", href: "/contact-me" },
 ];
 
+export const projects: Projects[] = [
+	{
+		id: 1,
+		heading: "Appload App",
+		type: "mobile",
+		urls: {
+			ios: "https://apps.apple.com/za/app/appload/id6451194589",
+			android:
+				"https://play.google.com/store/apps/details?id=com.apploadmobile.app&hl=en_ZA",
+		},
+		description:
+			"A real-time logistics platform connecting clients to transporters with ease. Appload streamlines delivery coordination with live updates, offers, and location tracking. Designed and scaled as a fully native iOS and Android experience for efficiency on the go.",
+	},
+	{
+		id: 2,
+		heading: "SAVA Mobile App",
+		type: "mobile",
+		urls: {
+			ios: "https://apps.apple.com/za/app/sava-mobile/id6670749596",
+			android:
+				"https://play.google.com/store/apps/details?id=com.africa.sava.mobile",
+		},
+		description:
+			"A fintech app built for expense management and smart company card controls. Users can instantly manage limits, freeze cards, and track spend in real time. Crafted for mobile-first financial teams with secure cross-platform tech.",
+	},
+	{
+		id: 3,
+		heading: "PEAK Mobile App",
+		type: "mobile",
+		urls: {
+			ios: "https://apps.apple.com/za/app/ahc-peak/id6692624993",
+			android:
+				"https://play.google.com/store/apps/details?id=com.ahc.peak.mobile",
+		},
+		description:
+			"A mobile-first learning management platform built to help companies onboard and upskill their teams. PEAK enables employees to access training content anytime, anywhere—driving engagement, retention, and workplace performance from day one.",
+	},
+	{
+		id: 4,
+		heading: "SAVA Website",
+		type: "web",
+		urls: {
+			web: "https://sava.africa/",
+		},
+		description:
+			"A sleek dashboard that gives businesses real-time insight into company spending. The web platform simplifies finance ops through clean UI, data visualizations, and secure admin controls.",
+		imageUrl:
+			"https://i.postimg.cc/BvWPBmRW/Screenshot-2025-04-22-at-08-54-23.png",
+	},
+	{
+		id: 5,
+		heading: "Forge Web App",
+		type: "web",
+		urls: {
+			web: "https://forgebybrave.ai/",
+		},
+		description:
+			"An AI-powered platform built for marketing teams to ideate, collaborate, and launch campaigns. With strategy boards, briefs, and creative planning tools, Forge helps teams move from idea to execution faster.",
+		imageUrl:
+			"https://i.postimg.cc/XJ4ZTpVQ/Screenshot-2025-04-22-at-08-54-05.png",
+	},
+	{
+		id: 6,
+		heading: "Zoie Health",
+		type: "mobile",
+		urls: {
+			ios: "https://zoiehealth.com",
+		},
+		description:
+			"A mobile-first women’s health platform offering cycle tracking, emergency services, and community support. Zoie is built to give users confidence and control in their health journey, personalized to each user’s needs.",
+	},
+];
+
 export const experiences: WorkExperience[] = [
 	{
 		id: 1,
-		heading: "Intro to Mobile Applications",
+		heading: "Zoie Health",
 		techStack: ["React Native", "Expo", ".NET", "C#", "API Integration"],
-		description:
-			'I took ownership of several end-to-end features on <a href="https://zoiehealth.com/">Zoie Health</a> —a React Native mobile app focused on women’s health and wellness. <br/> The app was already up and running, which made it the perfect environment to quickly learn, adapt, and contribute meaningfully from day one.',
+		href: "https://zoiehealth.com",
+		description: `A React Native mobile application built to support women’s health and wellness. The platform integrates personalized features that empower users to manage their health journey with confidence. Launched on an existing foundation, this solution was enhanced with new features that improved accessibility, engagement, and safety.`,
 		keyHighlights: [
 			{
 				id: 1,
 				icons: "https://i.postimg.cc/gJk7ZbSr/emergency-response.png",
 				title: "Emergency Response",
 				description:
-					"Integrated the AURA API with Google Location Services to allow users to request emergency help directly from their app.",
+					"Seamlessly integrated with the AURA API and Google Location Services, this feature allows users to instantly request emergency assistance from within the app.",
 			},
 			{
 				id: 2,
 				icons: "https://i.postimg.cc/PqH9dw1W/cycle-tracker.png",
 				title: "Cycle Tracker",
 				description:
-					"Developed a personalized cycle tracker, integrating a C# .NET backend and custom APIs for dynamic, user-specific data.",
+					"An intelligent, personalized cycle tracking tool powered by a C# .NET backend, enabling dynamic and secure health tracking for each user.",
 			},
 			{
 				id: 3,
 				icons: "https://i.postimg.cc/hG0wvt0H/emoji-chat.png",
 				title: "Community Chat",
 				description:
-					"Engineered real-time emoji reactions to boost engagement in user conversations.",
+					"A real-time community space enhanced with emoji-based reactions to boost user interaction and foster emotional connection.",
 			},
 			{
 				id: 4,
 				icons: "https://i.postimg.cc/tJ8vwZXV/gamification.png",
 				title: "Gamification Engine",
 				description:
-					"Built a badge and reward system that encouraged daily app usage and drove user retention.",
+					"Introduced a reward system with badges and daily streaks to increase user retention and incentivize health engagement.",
 			},
 		],
 	},
 	{
 		id: 2,
-		heading: "Contributor to Lead Engineer",
+		heading: "Appload App",
 		techStack: [
 			"WebSocktes",
 			"Kotlin",
@@ -57,8 +130,9 @@ export const experiences: WorkExperience[] = [
 			"Firebase",
 			"Azure DevOps",
 		],
+		href: "https://apps.apple.com/za/app/appload/id6451194589",
 		description:
-			'In 2023, I stepped into a mid-level role at Bridge Labs and took the lead on my first fully native mobile app —  <a href="https://apps.apple.com/za/app/appload/id6451194589">Appload</a>, a logistics platform that connects clients with service providers in real time. <br/> Initially a core contributor, I later became the Lead Engineer, driving sprint planning, code reviews, product design, and feature development.',
+			"A fully native mobile logistics platform designed to seamlessly connect clients with service providers in real time. Built with scalability and user experience at its core, the solution empowers clients to post orders, track service responses, and manage deliveries end-to-end. Since its inception, the app has evolved through multiple sprints, with strategic oversight across engineering, design, and product planning to meet the dynamic needs of the logistics industry.",
 		keyHighlights: [
 			{
 				id: 5,
@@ -92,44 +166,224 @@ export const experiences: WorkExperience[] = [
 	},
 	{
 		id: 3,
-		heading: "Honorable Mentions",
+		heading: "SAVA Mobile App",
 		techStack: [
-			"PostgreSQL",
-			"Agile Delivery & Sprint Planning",
-			"Nats.io",
-			"App Store Optimization (ASO)",
+			"WebSocktes",
+			"Kotlin",
+			"SwiftUI",
+			"Figma",
+			"Firebase",
+			"Azure DevOps",
 		],
+		href: "https://apps.apple.com/za/app/sava-mobile/id6670749596",
 		description:
-			'In 2024, I led product and frontend development on <a href="https://apps.apple.com/za/app/ahc-peak/id6692624993">PEAK</a>, an EdTech platform focused on learner success. I balanced user needs, product goals, and technical execution—shaping the experience from design to delivery. <br/> I also led the frontend of <a href="https://apps.apple.com/za/app/sava-mobile/id6670749596">SAVA</a>, a FinTech mobile app, handling API integration and building a clean, high-performing UI tailored for financial workflows. For both projects, I created the app store visuals for Google Play and the App Store—highlighting core features and enhancing discoverability.',
+			"A fully native mobile logistics platform designed to seamlessly connect clients with service providers in real time. Built with scalability and user experience at its core, the solution empowers clients to post orders, track service responses, and manage deliveries end-to-end. Since its inception, the app has evolved through multiple sprints, with strategic oversight across engineering, design, and product planning to meet the dynamic needs of the logistics industry.",
 		keyHighlights: [
 			{
-				id: 9,
-				icons: "https://i.postimg.cc/qR516h6Z/strategy.png",
-				title: "Strategy & Design",
+				id: 5,
+				icons: "https://i.postimg.cc/jS0kh7gp/order.png",
+				title: "Order Management",
 				description:
-					"Collaborated with stakeholders to build user-first experiences and align product decisions with learning outcomes.",
+					"Built a scalable order flow for cargo bookings with pin drops, distance calculation, and autofill—powered by Google Maps SDK.",
 			},
 			{
-				id: 10,
-				icons: "https://i.postimg.cc/L4WWn7z6/lead.png",
-				title: "Team Leadership",
+				id: 6,
+				icons: "https://i.postimg.cc/R0Gs9bSm/real-time.png",
+				title: "Real-Time Messaging",
 				description:
-					"Directed a cross-functional engineering team through agile sprints, reviews, and delivery milestones.",
+					"Enabled real-time chat between clients, transporters, and support boosting delivery speed and operational clarity.",
 			},
 			{
-				id: 11,
-				icons: "https://i.postimg.cc/500PtqyC/rocket.png",
-				title: "Ownership",
+				id: 7,
+				icons: "https://i.postimg.cc/HkXFG28W/design.png",
+				title: "Product Design",
 				description:
-					"Managed the product lifecycle—from early concept and wireframes to final deployment across Google Play and App Store.",
+					"Designed and refined core user flows, ensuring the interface aligned with user needs and business goals.",
 			},
 			{
-				id: 12,
-				icons: "https://i.postimg.cc/9QdggQsr/product.png",
-				title: "Product Vision",
+				id: 8,
+				icons: "https://i.postimg.cc/8Pr0WHHd/local.png",
+				title: "Localization Support",
 				description:
-					"Identified core user needs and mapped out features to guide the products and engineers.",
+					"Delivered a scalable multilingual system using resource framework, improving accessibility and user satisfaction across global markets.",
 			},
 		],
 	},
+	{
+		id: 4,
+		heading: "PEAK Mobile App",
+		techStack: [
+			"WebSocktes",
+			"Kotlin",
+			"SwiftUI",
+			"Figma",
+			"Firebase",
+			"Azure DevOps",
+		],
+		href: "https://apps.apple.com/za/app/ahc-peak/id6692624993",
+		description:
+			"A fully native mobile logistics platform designed to seamlessly connect clients with service providers in real time. Built with scalability and user experience at its core, the solution empowers clients to post orders, track service responses, and manage deliveries end-to-end. Since its inception, the app has evolved through multiple sprints, with strategic oversight across engineering, design, and product planning to meet the dynamic needs of the logistics industry.",
+		keyHighlights: [
+			{
+				id: 5,
+				icons: "https://i.postimg.cc/jS0kh7gp/order.png",
+				title: "Order Management",
+				description:
+					"Built a scalable order flow for cargo bookings with pin drops, distance calculation, and autofill—powered by Google Maps SDK.",
+			},
+			{
+				id: 6,
+				icons: "https://i.postimg.cc/R0Gs9bSm/real-time.png",
+				title: "Real-Time Messaging",
+				description:
+					"Enabled real-time chat between clients, transporters, and support boosting delivery speed and operational clarity.",
+			},
+			{
+				id: 7,
+				icons: "https://i.postimg.cc/HkXFG28W/design.png",
+				title: "Product Design",
+				description:
+					"Designed and refined core user flows, ensuring the interface aligned with user needs and business goals.",
+			},
+			{
+				id: 8,
+				icons: "https://i.postimg.cc/8Pr0WHHd/local.png",
+				title: "Localization Support",
+				description:
+					"Delivered a scalable multilingual system using resource framework, improving accessibility and user satisfaction across global markets.",
+			},
+		],
+	},
+	{
+		id: 4,
+		heading: "SAVA Website",
+		techStack: [
+			"WebSocktes",
+			"Kotlin",
+			"SwiftUI",
+			"Figma",
+			"Firebase",
+			"Azure DevOps",
+		],
+		href: "https://sava.africa/",
+		description:
+			"A fully native mobile logistics platform designed to seamlessly connect clients with service providers in real time. Built with scalability and user experience at its core, the solution empowers clients to post orders, track service responses, and manage deliveries end-to-end. Since its inception, the app has evolved through multiple sprints, with strategic oversight across engineering, design, and product planning to meet the dynamic needs of the logistics industry.",
+		keyHighlights: [
+			{
+				id: 5,
+				icons: "https://i.postimg.cc/jS0kh7gp/order.png",
+				title: "Order Management",
+				description:
+					"Built a scalable order flow for cargo bookings with pin drops, distance calculation, and autofill—powered by Google Maps SDK.",
+			},
+			{
+				id: 6,
+				icons: "https://i.postimg.cc/R0Gs9bSm/real-time.png",
+				title: "Real-Time Messaging",
+				description:
+					"Enabled real-time chat between clients, transporters, and support boosting delivery speed and operational clarity.",
+			},
+			{
+				id: 7,
+				icons: "https://i.postimg.cc/HkXFG28W/design.png",
+				title: "Product Design",
+				description:
+					"Designed and refined core user flows, ensuring the interface aligned with user needs and business goals.",
+			},
+			{
+				id: 8,
+				icons: "https://i.postimg.cc/8Pr0WHHd/local.png",
+				title: "Localization Support",
+				description:
+					"Delivered a scalable multilingual system using resource framework, improving accessibility and user satisfaction across global markets.",
+			},
+		],
+	},
+	{
+		id: 4,
+		heading: "Forge Web App",
+		techStack: [
+			"WebSocktes",
+			"Kotlin",
+			"SwiftUI",
+			"Figma",
+			"Firebase",
+			"Azure DevOps",
+		],
+		href: "https://forgebybrave.ai/",
+		description:
+			"A fully native mobile logistics platform designed to seamlessly connect clients with service providers in real time. Built with scalability and user experience at its core, the solution empowers clients to post orders, track service responses, and manage deliveries end-to-end. Since its inception, the app has evolved through multiple sprints, with strategic oversight across engineering, design, and product planning to meet the dynamic needs of the logistics industry.",
+		keyHighlights: [
+			{
+				id: 5,
+				icons: "https://i.postimg.cc/jS0kh7gp/order.png",
+				title: "Order Management",
+				description:
+					"Built a scalable order flow for cargo bookings with pin drops, distance calculation, and autofill—powered by Google Maps SDK.",
+			},
+			{
+				id: 6,
+				icons: "https://i.postimg.cc/R0Gs9bSm/real-time.png",
+				title: "Real-Time Messaging",
+				description:
+					"Enabled real-time chat between clients, transporters, and support boosting delivery speed and operational clarity.",
+			},
+			{
+				id: 7,
+				icons: "https://i.postimg.cc/HkXFG28W/design.png",
+				title: "Product Design",
+				description:
+					"Designed and refined core user flows, ensuring the interface aligned with user needs and business goals.",
+			},
+			{
+				id: 8,
+				icons: "https://i.postimg.cc/8Pr0WHHd/local.png",
+				title: "Localization Support",
+				description:
+					"Delivered a scalable multilingual system using resource framework, improving accessibility and user satisfaction across global markets.",
+			},
+		],
+	},
+	// {
+	// 	id: 3,
+	// 	heading: "Honorable Mentions",
+	// 	techStack: [
+	// 		"PostgreSQL",
+	// 		"Agile Delivery & Sprint Planning",
+	// 		"Nats.io",
+	// 		"App Store Optimization (ASO)",
+	// 	],
+	// 	description:
+	// 		'In 2024, I led product and frontend development on <a href="https://apps.apple.com/za/app/ahc-peak/id6692624993">PEAK</a>, an EdTech platform focused on learner success. I balanced user needs, product goals, and technical execution—shaping the experience from design to delivery. <br/> I also led the frontend of <a href="https://apps.apple.com/za/app/sava-mobile/id6670749596">SAVA</a>, a FinTech mobile app, handling API integration and building a clean, high-performing UI tailored for financial workflows. For both projects, I created the app store visuals for Google Play and the App Store—highlighting core features and enhancing discoverability.',
+	// 	keyHighlights: [
+	// 		{
+	// 			id: 9,
+	// 			icons: "https://i.postimg.cc/qR516h6Z/strategy.png",
+	// 			title: "Strategy & Design",
+	// 			description:
+	// 				"Collaborated with stakeholders to build user-first experiences and align product decisions with learning outcomes.",
+	// 		},
+	// 		{
+	// 			id: 10,
+	// 			icons: "https://i.postimg.cc/L4WWn7z6/lead.png",
+	// 			title: "Team Leadership",
+	// 			description:
+	// 				"Directed a cross-functional engineering team through agile sprints, reviews, and delivery milestones.",
+	// 		},
+	// 		{
+	// 			id: 11,
+	// 			icons: "https://i.postimg.cc/500PtqyC/rocket.png",
+	// 			title: "Ownership",
+	// 			description:
+	// 				"Managed the product lifecycle—from early concept and wireframes to final deployment across Google Play and App Store.",
+	// 		},
+	// 		{
+	// 			id: 12,
+	// 			icons: "https://i.postimg.cc/9QdggQsr/product.png",
+	// 			title: "Product Vision",
+	// 			description:
+	// 				"Identified core user needs and mapped out features to guide the products and engineers.",
+	// 		},
+	// 	],
+	// },
 ];

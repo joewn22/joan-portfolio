@@ -77,7 +77,7 @@ const DynamicText: React.FC<DynamicTextProps> = ({
 	return (
 		<div className={`${className} ${spacingClasses[lineSpacing]}`}>
 			{parts.map((part, index) => (
-				<p className="sm:text-lg text-sm font-light font-ttcommons" key={index}>
+				<p className="text-sm font-light font-ttcommons" key={index}>
 					{renderFormattedText(part)}
 				</p>
 			))}

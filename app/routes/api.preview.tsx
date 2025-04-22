@@ -6,14 +6,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
 	const targetUrl = url.searchParams.get("url");
 
 	if (!targetUrl) {
-		return json({ error: "URL parameter is required" }, { status: 400 });
+		return null;
 	}
 
 	try {
 		const previewData = await getLinkPreview(targetUrl);
 		return json(previewData);
 	} catch (error) {
-		console.error("Error fetching link preview:", error);
-		return json({ error: "Failed to fetch link preview" }, { status: 500 });
+		return null;
 	}
 }

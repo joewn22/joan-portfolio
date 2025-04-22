@@ -8,10 +8,7 @@ export const meta: MetaFunction = () => {
 
 const Page = () => {
 	return (
-		<MainLayout
-			heading="2022 – 2025 | Bridge Labs (Startup)"
-			subHeading="Lead Software Engineer "
-		>
+		<MainLayout heading="Projects" subHeading="">
 			<Projects />
 		</MainLayout>
 	);

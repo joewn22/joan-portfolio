@@ -19,7 +19,22 @@ export interface KeyHighlights {
 export interface WorkExperience {
 	id: number;
 	heading: string;
+	href?: string;
 	techStack: string[];
 	description: string;
 	keyHighlights: KeyHighlights[];
+}
+
+export interface Projects {
+	id: number;
+	heading: string;
+	type: "web" | "mobile";
+	urls: {
+		android?: string;
+		ios?: string;
+		web?: string;
+		figma?: string;
+	};
+	description: string;
+	imageUrl?: string;
 }

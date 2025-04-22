@@ -20,7 +20,7 @@ const ContactMe = () => {
 			<div className="w-full h-1/2 flex flex-col space-y-4 justify-center items-center relative">
 				<SimpleAnimatedText
 					className="sm:text-2xl text-base content-center text-center"
-					text="Whether you're looking for a developer to bring your vision to life or need help polishing a product, I’m open to freelance work, collaborations, or just a good chat."
+					text="I help early-stage founders turn their app ideas into scalable MVPs. Let’s build your vision fast and right."
 				/>
 				<span
 					className={`sm:text-lg text-xs transition-all duration-1000 ease-out

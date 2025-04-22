@@ -4,6 +4,7 @@ import { useState } from "react";
 import { menu } from "~/lib/data";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "@remix-run/react";
+import { cn } from "~/lib/utils";
 
 const BurgerMenu = ({
 	open,
@@ -40,19 +41,14 @@ const BurgerMenu = ({
 							transition={{ type: "spring", stiffness: 400, damping: 25 }}
 							style={{ pointerEvents: "auto" }}
 						>
-							<motion.div
-								className={`h-6 w-6 blur-sm rounded-full ${
-									activeMenu?.type === val.type
-										? "bg-gold"
-										: "border border-gold"
-								}`}
-								whileHover={{ scale: 1.1 }}
-								transition={{ type: "spring", stiffness: 400, damping: 25 }}
-							/>
-
 							<AnimatePresence>
 								<motion.p
-									className="text-forest text-sm font-ttcommons font-light"
+									className={cn(
+										"font-ttcommons font-medium",
+										activeMenu === val
+											? "text-gold text-lg"
+											: "text-grey opacity-50 text-sm"
+									)}
 									initial={{ opacity: 0, x: -10 }}
 									animate={{ opacity: 1, x: 0 }}
 									exit={{ opacity: 0, x: -10 }}
