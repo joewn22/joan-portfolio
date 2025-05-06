@@ -27,7 +27,7 @@ const AboutMe = () => {
 				{imageLoaded && (
 					<div className="flex flex-col space-y-5 sm:px-0 px-10 ">
 						<SimpleAnimatedText
-							text="I have over 3 years experience in the Software industry."
+							text="I have over 4 years experience in the Software industry."
 							className="sm:text-3xl text-base text-center sm:text-start"
 						/>
 						<SimpleAnimatedText
