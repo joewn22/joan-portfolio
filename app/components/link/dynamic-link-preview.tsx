@@ -3,6 +3,7 @@ import { Glimpse } from "react-glimpse/client";
 import { useFetcher, useLoaderData } from "@remix-run/react";
 import { ArrowUpRight01Icon } from "hugeicons-react";
 import { loader } from "~/routes/api.preview";
+import { Loader2 } from "lucide-react";
 
 interface LinkPreviewProps {
 	href: string;
@@ -52,15 +53,18 @@ export default function LinkPreview({
 	}, [href]);
 
 	return (
-		<div className="w-full font-ttcommons">
-			{previewData && (
-				<>
-					<img
-						className="m-0 sm:h-[174px] h-20 w-full rounded-sm object-cover"
-						src={previewData.image}
-						alt=""
-					/>
-				</>
+		<div className="w-full">
+			{fetcher.state === "loading" && !previewData && (
+				<div className="flex w-full h-20 justify-center items-center">
+					<Loader2 className="animate-spin text-gold" />
+				</div>
+			)}
+			{fetcher.state !== "loading" && previewData && (
+				<img
+					className="m-0 w-full h-[12rem] object-cover"
+					src={previewData.image}
+					alt=""
+				/>
 			)}
 		</div>
 	);

@@ -37,4 +37,5 @@ export interface Projects {
 	};
 	description: string;
 	imageUrl?: string;
+	stack: string[];
 }

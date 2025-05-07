@@ -11,6 +11,19 @@ export const menu: Menu[] = [
 export const projects: Projects[] = [
 	{
 		id: 1,
+		heading: "Cornerstone Resources 411",
+		type: "web",
+		urls: {
+			web: "https://democsresources.netlify.app/",
+		},
+		description:
+			"Cornerstone Resources 411 is a leading 100% Black-owned South African company specialising in the wholesale supply of crucial bulk commodities, agricultural goods, and petroleum products.",
+		imageUrl:
+			"https://res.cloudinary.com/dg1g6ctku/image/upload/v1746620338/Screenshot_2025-05-07_at_14.17.43_ldrwzg.png",
+		stack: ["Remix run", "Typescript", "Tailwind CSS"],
+	},
+	{
+		id: 2,
 		heading: "Appload App",
 		type: "mobile",
 		urls: {
@@ -20,9 +33,10 @@ export const projects: Projects[] = [
 		},
 		description:
 			"A real-time logistics platform connecting clients to transporters with ease. Appload streamlines delivery coordination with live updates, offers, and location tracking. Designed and scaled as a fully native iOS and Android experience for efficiency on the go.",
+		stack: ["Kotlin", "SwiftUI", ".NET"],
 	},
 	{
-		id: 2,
+		id: 3,
 		heading: "SAVA Mobile App",
 		type: "mobile",
 		urls: {
@@ -32,9 +46,10 @@ export const projects: Projects[] = [
 		},
 		description:
 			"A fintech app built for expense management and smart company card controls. Users can instantly manage limits, freeze cards, and track spend in real time. Crafted for mobile-first financial teams with secure cross-platform tech.",
+		stack: ["React Native", "Expo", "Nats.io"],
 	},
 	{
-		id: 3,
+		id: 4,
 		heading: "PEAK Mobile App",
 		type: "mobile",
 		urls: {
@@ -44,9 +59,10 @@ export const projects: Projects[] = [
 		},
 		description:
 			"A mobile-first learning management platform built to help companies onboard and upskill their teams. PEAK enables employees to access training content anytime, anywhere—driving engagement, retention, and workplace performance from day one.",
+		stack: ["React Native", "Expo", "PostgreSQL"],
 	},
 	{
-		id: 4,
+		id: 5,
 		heading: "SAVA Website",
 		type: "web",
 		urls: {
@@ -56,9 +72,10 @@ export const projects: Projects[] = [
 			"A sleek dashboard that gives businesses real-time insight into company spending. The web platform simplifies finance ops through clean UI, data visualizations, and secure admin controls.",
 		imageUrl:
 			"https://i.postimg.cc/BvWPBmRW/Screenshot-2025-04-22-at-08-54-23.png",
+		stack: ["NextJs", "Typescript", "Tailwind CSS"],
 	},
 	{
-		id: 5,
+		id: 6,
 		heading: "Forge Web App",
 		type: "web",
 		urls: {
@@ -68,9 +85,10 @@ export const projects: Projects[] = [
 			"An AI-powered platform built for marketing teams to ideate, collaborate, and launch campaigns. With strategy boards, briefs, and creative planning tools, Forge helps teams move from idea to execution faster.",
 		imageUrl:
 			"https://i.postimg.cc/XJ4ZTpVQ/Screenshot-2025-04-22-at-08-54-05.png",
+		stack: ["NextJs", "Typescript", ".NET"],
 	},
 	{
-		id: 6,
+		id: 7,
 		heading: "Zoie Health",
 		type: "mobile",
 		urls: {
@@ -78,6 +96,7 @@ export const projects: Projects[] = [
 		},
 		description:
 			"A mobile-first women’s health platform offering cycle tracking, emergency services, and community support. Zoie is built to give users confidence and control in their health journey, personalized to each user’s needs.",
+		stack: ["React Native", ".NET"],
 	},
 ];
 
