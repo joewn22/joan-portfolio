@@ -43,15 +43,7 @@ const HorizontalCarousel = ({
 										key={proj.id}
 									>
 										<div className="w-full h-1/2 bg-white mb-2">
-											{proj.type === "web" ? (
-												<img
-													className="object-cover"
-													src={proj.imageUrl}
-													alt={proj.heading}
-												/>
-											) : (
-												<LinkPreview href={proj.urls.ios ?? ""} />
-											)}
+											<LinkPreview proj={proj} />
 										</div>
 
 										<div className="flex flex-row items-center justify-between">

@@ -1,14 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Glimpse } from "react-glimpse/client";
-import { useFetcher, useLoaderData } from "@remix-run/react";
-import { ArrowUpRight01Icon } from "hugeicons-react";
-import { loader } from "~/routes/api.preview";
+import { useEffect } from "react";
+import { useFetcher } from "@remix-run/react";
 import { Loader2 } from "lucide-react";
+import { Projects } from "~/lib/type";
 
 interface LinkPreviewProps {
-	href: string;
-	children?: React.ReactNode;
-	className?: string;
+	proj: Projects;
 }
 
 interface LinkPreviewData {
@@ -28,18 +24,14 @@ interface GlimpseData {
 	image: string;
 }
 
-export default function LinkPreview({
-	href,
-	children,
-	className = "",
-}: LinkPreviewProps) {
+export default function LinkPreview({ proj }: LinkPreviewProps) {
 	const fetcher = useFetcher<LinkPreviewData>();
 
 	// Prepare data for Glimpse
 	const previewData: GlimpseData | null =
 		fetcher.data && !fetcher.data.error
 			? {
-					url: href,
+					url: proj.urls.ios ?? "",
 					title: fetcher.data.title || fetcher.data.siteName || "",
 					description: fetcher.data.description || "",
 					image: fetcher.data.images?.[0] || fetcher.data.favicons?.[0] || "",
@@ -47,10 +39,10 @@ export default function LinkPreview({
 			: null;
 
 	useEffect(() => {
-		if (href.length > 0) {
-			fetcher.load(`/api/preview?url=${encodeURIComponent(href)}`);
+		if (proj?.type !== "web" && proj?.urls?.ios) {
+			fetcher.load(`/api/preview?url=${encodeURIComponent(proj?.urls?.ios)}`);
 		}
-	}, [href]);
+	}, [proj]);
 
 	return (
 		<div className="w-full">
@@ -59,11 +51,17 @@ export default function LinkPreview({
 					<Loader2 className="animate-spin text-gold" />
 				</div>
 			)}
-			{fetcher.state !== "loading" && previewData && (
+			{fetcher.state !== "loading" && previewData ? (
 				<img
-					className="m-0 w-full h-[12rem] object-cover"
+					className="object-cover m-0 w-full h-[12rem]"
 					src={previewData.image}
-					alt=""
+					alt={proj.heading}
+				/>
+			) : (
+				<img
+					className="object-cover m-0 w-full h-[12rem]"
+					src={proj.imageUrl}
+					alt={proj.heading}
 				/>
 			)}
 		</div>
