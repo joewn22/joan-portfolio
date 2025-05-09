@@ -14,7 +14,7 @@ export const projects: Projects[] = [
 		heading: "Cornerstone Resources 411",
 		type: "web",
 		urls: {
-			web: "https://democsresources.netlify.app/",
+			web: "https://csresources.co.za/",
 		},
 		description:
 			"Cornerstone Resources 411 is a leading 100% Black-owned South African company specialising in the wholesale supply of crucial bulk commodities, agricultural goods, and petroleum products.",
